@@ -1,0 +1,91 @@
+*title The Ship That Came Back
+*author Claude
+*scene_list
+  startup
+  chapter_1
+  ending
+
+*create implicit_control_flow true
+
+*comment The clock: hours left before the navy acts. Every action on the ship costs time.
+*create hours_left 48
+
+*comment How far each side trusts you. 0-100, fairmath.
+*create earth_trust 50
+*create ship_trust 50
+
+*comment The camera Osei gives you: "open", "hidden" (worn, can be switched off), "none".
+*create camera "open"
+*create camera_off false
+
+*comment How you answered "Are you the Builder?": "yes", "engineer", "asked"
+*create builder_role "engineer"
+
+*comment Notebook: what you have found out. Shown on the stats screen.
+*create seen_bridge false
+*create seen_sleepers false
+*create seen_farms false
+*create knows_garden false
+*create knows_captain false
+*create knows_split false
+*create knows_not_sent false
+*create places_seen 0
+
+*comment Your promise to the Speaker about the navy: "kept_out", "no_promise", "bargain"
+*create promise "no_promise"
+
+*comment What you told Osei at the end of chapter 1: "all", "some", "lie"
+*create report "all"
+*create caught_lying false
+
+Twelve years ago, you built an engine that could cross to another star in one jump.
+
+The first ship to use it was the [i]Wayfarer[/i]. It carried two thousand people. Most of them were frozen in cold sleep, so they would not age on the long trip to a new world.
+
+On the day of the jump, the [i]Wayfarer[/i] switched on your engine. Then it was gone. No wreck. No signal. Nothing.
+
+People blamed you. You lost your job, then most of your friends. For twelve years you have lived alone, fixing farm machines for cash.
+
+This morning, the [i]Wayfarer[/i] came back.
+
+It appeared at the exact spot where it vanished, far out past the Moon. It has sent one message, over and over.
+
+[b]Send the one who built the drive. Only them.[/b]
+
+Now you sit alone in a small navy shuttle, a few hours from the ship. The voice on the radio is Osei, the navy commander. She runs the warships that surround the [i]Wayfarer[/i].
+
+"You have forty-eight hours," Osei says. "Find out what that ship is and what it wants. If you can't tell me, my orders are to destroy it."
+
+Two thousand people vanished on that ship. You have spent twelve years wanting to know why. Now whatever is on it has asked for you, and only you.
+
+*page_break
+
+A small box slides out of the shuttle's console. Inside is a camera, the size of a coat button.
+
+"Clip that to your jacket," Osei says. "We see what you see. We hear what you hear. If something goes wrong, we'll know."
+
+The message said [i]only them[/i]. It did not say anything about cameras.
+
+*choice
+  #Clip it on where anyone can see it. Earth deserves to watch this.
+    *set camera "open"
+    *set earth_trust %+15
+    You clip it to your collar. A small green light comes on.
+
+    "Thank you," Osei says. She sounds like she means it.
+  #Clip it under your collar, out of sight. You can switch it off later if you need to.
+    *set camera "hidden"
+    You tuck it under your collar, where nobody will notice it.
+
+    "Good," Osei says. She does not ask why you hid it. You suspect she will remember.
+  #Leave it in the box. The ship asked for you alone.
+    *set camera "none"
+    *set earth_trust %-20
+    *set ship_trust %+10
+    You close the box.
+
+    There is a long silence on the radio. "Your choice," Osei says at last. "But then I only have your word. Make sure it's good."
+
+*page_break
+
+*finish

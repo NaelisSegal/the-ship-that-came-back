@@ -1,0 +1,37 @@
+*comment This scene is shown when the player clicks "Show Stats".
+[b]Time left before the navy acts:[/b] ${hours_left} hours
+
+*stat_chart
+  percent earth_trust Earth trusts you
+  percent ship_trust The ship trusts you
+
+[b]Your notebook[/b]
+
+*if places_seen = 0
+  You have not learned much yet.
+*if knows_garden
+  The ship did not reach its star. It went to a red star with a huge built ring around it. The crew called it the Garden.
+*if knows_captain
+  Captain Mara Venn's pod was opened the day the ship came back. She may have been awake for almost three hundred years.
+*if knows_split
+  The ship voted to come home, but only just. Many wanted to stay in the Garden.
+*if seen_sleepers
+  212 Sleepers from Earth are still in cold sleep. Their pods will fail within weeks.
+*if seen_farms
+  The ship's food plants come from the Garden. They are dying. Food will run out in months.
+*if knows_not_sent
+  The council did not send the message that called you. Someone locked the radio.
+*if camera = "none"
+  You left Osei's camera behind.
+*elseif camera_off
+  You switched Osei's camera off.
+*elseif camera = "open"
+  You wear Osei's camera where everyone can see it.
+*else
+  You wear Osei's camera in secret.
+*if promise = "kept_out"
+  You promised the Speaker no soldiers would come aboard.
+*if report = "lie"
+  You lied to Osei.
+*if caught_lying
+  Osei knows you lied.

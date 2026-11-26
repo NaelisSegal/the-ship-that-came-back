@@ -1,0 +1,572 @@
+[b]Chapter 1. Lights in the windows[/b]
+
+The flight takes three hours. At first the [i]Wayfarer[/i] is only a dot. Then it grows into a shape.
+
+*set hours_left -3
+
+You know this ship. You walked through it a hundred times while it was being built. It was long, white and smooth, like a needle with a fat end.
+
+That is not what you see now.
+
+The ship is the right length. But its skin is covered in patches. Some are metal. Some are a grey, ridged stuff, like the inside of a seashell. Whole new rooms have been built onto the outside. They cling to the ship like wasp nests on a wall.
+
+And the windows are lit. Hundreds of them. Thousands.
+
+When the [i]Wayfarer[/i] left, sixty crew were awake. Everyone else was in cold sleep. Sixty people do not need thousands of lights.
+
+"Are you seeing this?" you ask.
+
+*if camera = "none"
+  "No," Osei says. "You left our eyes in the box. Tell me."
+
+  You tell her. She is quiet for a while after.
+*else
+  "We see it," Osei says quietly.
+
+The radio clicks. A new voice comes on. It is young and careful. It says each word slowly, like someone reading from an old book.
+
+"Shuttle. This is the [i]Wayfarer[/i]. Are you the Builder?"
+
+*choice
+  #"Yes. I built the drive."
+    *set builder_role "yes"
+    *set ship_trust %+10
+    There is a pause. Then you hear the voice let out a breath.
+
+    "The Builder," it says, and not to you. Someone near the radio repeats it. Then someone else.
+  #"I'm the engineer who designed the engine. I'm nobody's Builder."
+    *set builder_role "engineer"
+    There is a long pause.
+
+    "Engineer," the voice says, as if it is a new word. "We will tell them."
+  #"Who's asking? And who sent that message?"
+    *set builder_role "asked"
+    *set ship_trust %-5
+    "I am the one picked to meet you," the voice says. "The council will answer the rest. Not me."
+
+"There is a door open on the left side, near the back," the voice goes on. "Follow the lights."
+
+[i]Builder.[/i] It takes you a moment. They mean you, the one who built the engine.
+
+A line of small lights blinks along the ship's side. You steer toward them.
+
+*page_break
+
+The shuttle locks onto the ship with a heavy thump. The door hisses open.
+
+The air hits you first. It smells of wet soil, smoke and cooking. Ship air should smell of nothing.
+
+A young person waits in the doorway. They look about sixteen. They are thin, with short dark hair. Their coat is sewn from at least three old crew uniforms. You can still read half a name tag on one sleeve.
+
+"I'm Pell," they say. "I was picked to meet you."
+
+Behind Pell, the corridor is full of people. A hundred, maybe more. Old men. Women holding babies. Children on their parents' shoulders. Nobody speaks. They all look at you.
+
+*if builder_role = "yes"
+  Then someone at the back starts to clap. Others join in. A few people bow their heads, the way people do at a grave or in church.
+
+  You told them you were the Builder. They seem to hear much more in that word than you meant.
+*elseif builder_role = "engineer"
+  "Engineer," someone whispers. The word moves down the crowd. Some faces look let down. Others look relieved.
+
+  An old woman nods at you, slowly, as if you passed some kind of test.
+*else
+  The crowd watches you the way people watch a strange dog. A man near the front pulls his child behind him.
+
+You look down. The corridor floor is worn. A shallow groove runs down the middle of the metal. It is smooth as a river stone.
+
+Feet made that groove. A great many feet, walking the same path, for a long, long time.
+
+You built this floor. Twelve years ago it was new.
+
+"How long?" you ask. "How long have you been gone?"
+
+Pell frowns, as if it is a strange question. "By the ship's count, this is year three hundred and eleven," they say.
+
+Three hundred and eleven years.
+
+For you, it was twelve.
+
+These people are not the crew. The crew died long ago. These are their great-great-great-grandchildren, and further down than that. Somehow, more than three hundred years passed on the ship. Only twelve passed on Earth. You do not know how. You built the engine, and you do not know how.
+
+"The council is meeting about you now," Pell says. "The Speaker leads the council. She will see you later today. Until then, I'm told to take you where you want to go."
+
+*set hours_left -1
+
+*label explore
+*if places_seen = 2
+  *goto speaker_call
+
+*page_break
+
+*if places_seen = 0
+  The ship is huge. Each place will take hours. You can see two before the Speaker sends for you. Pell waits for you to choose.
+*else
+  Pell checks the time. "We have time for one more place," they say. "Then the Speaker wants you."
+
+*choice
+  *if (not(seen_bridge)) #The bridge. The ship's log should say where they went.
+    *goto bridge
+  *if (not(seen_sleepers)) #The cold sleep hall. Two thousand people went to sleep there.
+    *goto sleepers
+  *if (not(seen_farms)) #Wherever these people actually live. See how they live.
+    *goto farms
+
+*comment ------------------------------------------------------------------
+*label bridge
+*set seen_bridge true
+*set places_seen +1
+*set hours_left -5
+*set knows_garden true
+
+The bridge is the room where the ship is steered. You remember it bright and busy. Now it is dim and very quiet.
+
+Most of the screens are dead. The live ones are wrapped in tape and patched with wire. One old woman sits in the big chair at the front, knitting. She looks up at you, then goes back to her knitting. Pell says she keeps the log and does not like to talk.
+
+The log is still running on the main screen. You know this software. You helped install it.
+
+You scroll back to the first day.
+
+[i]Day 1. The jump worked. We are somewhere. But this is not our star.[/i]
+
+The captain wrote that. Her name is at the bottom of every early entry: Captain Mara Venn. You met her once, before the launch. She shook your hand and said your engine had better work.
+
+You open the star map from that first day. It shows a dim red star, alone in a lot of dark. It is not on any chart you know.
+
+Then you see what is around the star, and you sit down.
+
+There is a ring. It circles the star, very far out. It is thin and perfectly round. It is far too even to be natural.
+
+Someone built it. Someone built a ring around a whole star.
+
+[i]Day 40. They came to look at us.[/i]
+
+[i]Day 41. We cannot tell if they are alive the way we are alive. They do not answer. But they do not hurt us.[/i]
+
+[i]Year 2. We are allowed to stay. The crew has started calling this place the Garden.[/i]
+
+So the Garden is the whole place: the red star, the ring, and whoever built it.
+
+That is the answer to the question that ruined your life. The [i]Wayfarer[/i] did not blow up. Your engine did not fail. It sent the ship somewhere else, somewhere with builders of its own.
+
+The log goes on for three hundred years. You do not have time to read it all.
+
+*choice
+  #Jump to the last entry, written just before they came home.
+    You scroll to the end.
+
+    [i]Year 311. The vote is done. We go home. Not everyone agrees. Some will never forgive us. I hope the Builder can forgive what we did to the engine.[/i]
+
+    It is not signed by the captain. It is signed by the Speaker.
+
+    So the vote to come home was close. And something was done to your engine.
+    *set knows_split true
+  #Look for anything strange in the middle years.
+    You skim fast. Then, suddenly, there is nothing.
+
+    About ninety years in the middle of the log are gone. Wiped out. Only one line is left in their place.
+
+    [i]Removed by order of the Captain.[/i]
+
+    Removed by which captain? You check. In three hundred years, the ship only ever had one: Mara Venn.
+
+    She was already in her forties when the ship left. When she gave that order, she was well over a hundred and fifty.
+    *set knows_captain true
+
+The old woman stops knitting.
+
+"The log only says what she let it say," she says. It is the only thing she says to you. Then she picks up her needles again.
+
+*if camera = "open"
+  You notice Pell staring at the green light on your collar. Pell says nothing about it. But they walk you out a little faster than they walked you in.
+*goto explore
+
+*comment ------------------------------------------------------------------
+*label sleepers
+*set seen_sleepers true
+*set places_seen +1
+*set hours_left -5
+
+The cold sleep hall runs almost the whole length of the ship. It holds two thousand sleep pods, in long rows. Each pod is a glass box the size of a bed. Inside, a person can sleep for years without getting older.
+
+You stood here on launch day. Every pod was closed, frosted and humming.
+
+Now almost every lid is open.
+
+Most of the pods are empty and dusty. Some have been turned into planters. Small plants grow out of them, with dark blue leaves. Some hold folded clothes, or old shoes, or photographs. People have left them here like gifts.
+
+"Over the years, they woke them," Pell says. "A few at a time. The ship needed more hands. More families."
+
+"How many are still asleep?"
+
+Pell points to the far end of the hall.
+
+There, behind a rope, one block of pods is still closed. Their lids are frosted. Their small lights still glow green.
+
+You count. Two hundred and twelve.
+
+Two hundred and twelve people who left Earth twelve years ago. They have slept through three centuries. Their parents, husbands, wives and children are still alive back home. Some of them have probably been on the news this morning, crying and hoping.
+
+"We call them the Sleepers," Pell says. "Nobody wakes them. They are being kept for when we came home."
+
+"You are home," you say.
+
+Pell does not answer.
+
+Off to one side, away from the rest, stands a single pod. It is bigger and older-looking. Its lid is wide open, and the inside is still warm. Someone climbed out of it, and not long ago.
+
+The name plate says: [i]Captain Mara Venn[/i].
+
+*set knows_captain true
+
+You met her once, before the launch. She shook your hand and told you your engine had better work. She was already in her forties then.
+
+The pod's screen shows its history. She went into this pod in year 290. Before that, there is no record of her sleeping at all. Not once, in two hundred and ninety years.
+
+The lid was opened six days ago. That is the same day the ship came back.
+
+*choice
+  #Check the Sleepers' pods. You know how these machines work.
+    You step over the rope. Pell makes a small noise but does not stop you.
+
+    You open the panel on the nearest pod. Then the next. Then ten more.
+
+    It is bad. The pods were built to last twenty years. They have run for three hundred. The power cells are worn out. They are patched with parts you don't recognise.
+
+    You do the sums twice. These two hundred and twelve people have a few weeks left. Maybe a month. Then the pods will fail, and they will die in their sleep.
+
+    "Did you know?" you ask.
+
+    "Yes," Pell says. "That's why we had to come home now."
+    *set ship_trust %+5
+  #Ask Pell about the captain.
+    "The captain is alive," you say. "Isn't she?"
+
+    Pell's face closes like a door.
+
+    "We do not talk about the Captain," they say. "Not to outsiders. Not even to you."
+
+    "Why not?"
+
+    Pell looks over their shoulder before they answer. Nobody is near.
+
+    "Because she didn't want to come back," Pell whispers. "And the ship has never gone anywhere she didn't want to go."
+    *set knows_split true
+*goto explore
+
+*comment ------------------------------------------------------------------
+*label farms
+*set seen_farms true
+*set places_seen +1
+*set hours_left -5
+*set knows_split true
+
+Pell takes you down a ladder, then another, then through a heavy door.
+
+You remember this place as the main cargo hold. It was a huge empty space, full of crates for the new world.
+
+Now it is a town.
+
+Floors have been built inside it, one above another, like a stack of shelves. Each floor is a field. Long lamps hang overhead, giving off a warm orange light. Under them grow rows of plants with dark blue leaves.
+
+You walk past one plant, and its leaves turn to follow you. Slowly, like a sunflower following the sun.
+
+"What are these?"
+
+"Food," Pell says, surprised you need to ask. "They come from the Garden. That's where we lived, around another star."
+
+People are everywhere. Children run along the paths between the fields. Old people sit in doorways, shelling seeds. There are homes built out of crates, and a school, and a market where people trade bowls of food for tools.
+
+You try to guess how many people live here. You give up after a while. Many thousands. Far more than the ship was ever built to hold.
+
+Then you notice the walls.
+
+Someone has painted the same word, again and again, in big white letters: [i]home[/i].
+
+Someone else has painted over many of them in red: [i]back[/i].
+
+"The vote," Pell says, when they see you looking. "Last year the whole ship voted. Go home to Earth, or stay in the Garden forever. Home won."
+
+"By how much?"
+
+Pell is quiet for a moment. "Not much."
+
+A man is standing at the edge of the nearest field. He has been watching you since you came in. He is maybe fifty, with soil on his hands. He walks over.
+
+"Look at the leaves," he says to you. "Go on. Look."
+
+You look. Up close, the blue leaves have brown edges. Some are curling.
+
+"They're dying," he says. "They have been dying since the jump. They need the light of the Garden's star. These lamps are not enough. We will run out of food in a few months."
+
+He leans in closer.
+
+"You should have left us where we were," he says. Then he walks away.
+
+*choice
+  #Go after him. You want to hear the rest.
+    You follow him between the rows. He hears you and turns.
+
+    "You think I'm angry at you?" he says. "I'm not. I'm angry at them. At the people who made us come back."
+
+    "Then why talk to me?"
+
+    "Because you're the only person who can make the engine work again," he says. "And when you can, I want you to remember that half this ship wanted to go back."
+
+    He holds out his hand. After a moment, you shake it. His grip is very strong.
+
+    "Ask the Speaker about the engine," he says. "Ask her what they did to it to get us here."
+    *set ship_trust %+5
+  #Let him go. Ask Pell how bad the food really is.
+    "Is he right?" you ask Pell.
+
+    Pell nods. "Three months, the council says. Maybe four, if we eat less."
+
+    "Did you vote?"
+
+    "I'm too young to vote." Pell looks at the red paint on the wall. "But my mother voted [i]back[/i]. She won't talk to my father now."
+
+    They say it calmly, like something everyone knows.
+*goto explore
+
+*comment ------------------------------------------------------------------
+*label speaker_call
+*set hours_left -1
+
+*page_break
+
+A bell rings somewhere far off. Pell straightens up. "The council is ready," they say.
+
+Pell takes you to a long room near the front of the ship. You remember it as the crew's dining room. Now the tables have been pushed into a half circle. About twenty people sit behind them. Most are old.
+
+In the middle sits the Speaker. She is a small woman, maybe seventy, with white hair cut very short. She leans on a cane made of something dark and shiny that is not wood.
+
+She looks at you for a long time before she speaks.
+
+*if camera = "open"
+  Her eyes go to the green light on your collar.
+
+  "Your navy is listening," she says. "I understand. I would do the same. But there are things I will not say to them. Not yet."
+
+  She waits.
+
+  *choice
+    #Switch the camera off. This talk is between you and the ship.
+      You reach up and turn it off. The green light goes dark.
+
+      Somewhere out there, Osei is watching the screen go black. You can almost hear her swear.
+
+      "Thank you," the Speaker says. Some of the people behind her relax.
+      *set camera_off true
+      *set ship_trust %+15
+      *set earth_trust %-15
+    #Leave it on. You will not hide things from Earth.
+      "I'm sorry," you say. "Earth needs to see this."
+
+      The Speaker nods slowly. "Then I will be careful what I say. You may find that costs you more than it costs me."
+      *set ship_trust %-10
+      *set earth_trust %+5
+*elseif camera = "hidden"
+  The camera under your collar is still running. Nobody here knows it is there.
+
+  *choice
+    #Switch it off quietly, before she starts.
+      You scratch your neck, and press the switch as you do. Nobody notices.
+
+      Osei will notice. You will have to explain that later.
+      *set camera_off true
+      *set earth_trust %-10
+    #Leave it running. Osei should hear this.
+      You leave it. Whatever the Speaker says now, Earth will hear too, and she will not know it.
+*else
+  "You came with no camera," she says. "Pell told us. Good. Then we can talk plainly."
+  *set ship_trust %+5
+
+"Thank you for coming," the Speaker says. "We have three things to tell you. Then we have one thing to ask."
+
+"First. We did not send that message."
+
+You stare at her.
+
+"It started the moment we arrived," she says. "It comes from the ship's main radio. Someone locked the radio so we cannot change it, or stop it. We have tried. We thought Earth had called for you. We hoped you could tell us who did."
+
+*set knows_not_sent true
+
+*if seen_sleepers
+  You think of the captain's empty pod. Its lid opened six days ago, the day this message started.
+*elseif knows_captain
+  You think of the one line left in the log. [i]Removed by order of the Captain.[/i] Someone on this ship still gives orders that nobody can undo.
+
+  You say nothing. Not yet.
+
+"Second," she goes on. "Your engine is broken. To get us home, we had to push it far past what it was built for. It burned out on the way. We cannot jump again. Not until someone fixes it."
+
+*if knows_split
+  "And some of your people would use it to go straight back," you say.
+
+  For the first time, the Speaker looks surprised. Then she nods. "You have been listening. Yes. Some would."
+
+"Third. There are nine thousand four hundred people on this ship." She lets that sink in. "We are not the crew you lost. We are their children's children. Most of us have never seen a sky."
+
+*if seen_sleepers
+  "And two hundred and twelve Sleepers," you say. "Whose pods are dying."
+
+  "Yes," she says quietly. "We know."
+*if seen_farms
+  "And your food is running out."
+
+  "Yes. That too."
+
+"Now, the thing we ask," the Speaker says.
+
+She leans forward on her cane.
+
+"Your navy must not come aboard this ship. Not with guns. Some of my people have spent their whole lives being told Earth would welcome them. Others were told Earth would kill them. If soldiers come through those doors, the second group will fight. And then the first group will fight too."
+
+"Promise me you will keep them out."
+
+*choice
+  #"I promise. No soldiers come aboard while I'm here."
+    *set promise "kept_out"
+    *set ship_trust %+15
+    The Speaker closes her eyes for a moment. "Thank you," she says.
+
+    You hope you can keep it. You are not sure Osei will let you.
+  #"I can't promise that. I don't give orders to the navy."
+    *set promise "no_promise"
+    *set ship_trust %-5
+    *set earth_trust %+5
+    "No," the Speaker says. "I suppose you don't."
+
+    She does not look angry. She looks tired.
+
+    "Then do what you can," she says. "And do it fast."
+  #"I'll try, if you show me the engine. And tell me who locked the radio."
+    *set promise "bargain"
+    A murmur runs around the room.
+
+    "You can see the engine tomorrow," the Speaker says. "As for the radio, I have told you the truth. We do not know."
+
+    *if knows_captain
+      *if seen_sleepers
+        "I think you have a guess," you say. "I saw the captain's pod."
+      *else
+        "I think you have a guess," you say. "I read the log. I know who wiped ninety years out of it."
+
+      The room goes very still.
+
+      "Tomorrow," the Speaker says again. Her voice is hard now. "Not today."
+    *else
+      She is telling the truth, or she is very good at lying. You cannot tell which.
+
+The meeting ends. Pell walks you back to your shuttle. It is the only place on this ship that feels like yours.
+
+*set hours_left -2
+
+*page_break
+
+You close the shuttle door and sit down. Your hands are shaking a little. You let them.
+
+The radio beeps. It is Osei.
+
+"Talk to me," she says. "My bosses want to know what's on that ship. They want to know in the next ten minutes."
+
+You think about what you know.
+
+*if knows_garden
+  The ship went to a star nobody has charted. Something built a ring around it.
+*if knows_captain
+  The captain may still be alive, after three hundred years.
+*if knows_split
+  The ship's people are split. Almost half of them did not want to come back.
+*if seen_sleepers
+  Two hundred and twelve people from Earth are still asleep, and their pods are dying.
+*if seen_farms
+  The food will run out in a few months.
+Nine thousand people live aboard. The engine is broken. And nobody on board admits to sending the message that brought you here.
+
+*choice
+  #Tell Osei everything you know.
+    *set report "all"
+    *set earth_trust %+15
+    You tell her all of it. It takes a long time.
+
+    When you are done, Osei is quiet.
+
+    *if seen_sleepers
+      "Two hundred and twelve," she says at last. "Those families have been calling us all day." She breathes out. "This changes things."
+    *else
+      "Nine thousand people," she says at last. "That changes things."
+
+    *if promise = "kept_out"
+      "One more thing," you say. "I promised them no soldiers would come aboard."
+
+      "You had no right to promise that," Osei says. Then, after a pause: "I'll hold them back as long as I can. Not forever."
+  #Tell her they are people, not a threat. Keep the rest back for now.
+    *set report "some"
+    "They're people," you say. "Descendants of the crew. Thousands of them. They're scared, and they're not a threat. I need more time."
+
+    You do not mention the broken engine. Not yet. Earth would want to take this ship apart to learn what it knows. You want to understand it first.
+
+    *if (camera = "open") and not(camera_off)
+      "I saw what you saw," Osei says. "You're leaving things out."
+
+      "Yes," you say. "For now."
+
+      She is quiet. "Fine. For now."
+      *set earth_trust %-5
+    *else
+      "All right," Osei says slowly. She has nothing else to go on but your word. "Keep talking to me."
+  #Lie. Say it's only the old crew, tired and lost, and nothing to worry about.
+    *set report "lie"
+    "It's the crew," you say. "Some of them, anyway. They're tired and confused. There's nothing dangerous here. Tell your bosses to stand down."
+
+    *if (camera = "open") and not(camera_off)
+      There is a long silence.
+
+      "I watched your camera all day," Osei says. "I saw the crowd. I saw that floor."
+
+      Because you wore the camera in plain sight, Earth has seen everything you saw. There is no way out of this.
+
+      "Don't ever lie to me again," Osei says. "My bosses heard that too."
+      *set caught_lying true
+      *set earth_trust %-30
+    *elseif camera = "none"
+      "Your word is all I have," Osei says. "You'd better be right."
+
+      She sounds like she believes you. That will make it worse, if she finds out.
+      *set ship_trust %+5
+    *else
+      "Your camera went dark for part of it," Osei says. "I'll take your word on that part."
+
+      She does not sound like she believes you.
+      *set earth_trust %-10
+
+Osei ends the call. You lie down on the shuttle's narrow bunk. You have ${hours_left} hours left.
+
+You almost sleep.
+
+Then the radio speaker crackles again. It is not Osei's channel. It is the [i]Wayfarer[/i]'s main radio, the one nobody on board can control.
+
+For six days it has sent the same message. Now, for the first time, the words change.
+
+[b]Thank you for coming. Come to the engine room tonight. Alone. Tell no one.[/b]
+
+[b]M.V.[/b]
+
+*if knows_captain
+  M.V. Mara Venn. The captain who should have died three hundred years ago.
+*elseif seen_bridge
+  M.V. You think of the name at the bottom of the log's first page. Captain Mara Venn.
+
+  But she would be over three hundred and fifty years old.
+*else
+  You do not know anyone with those letters. Not yet.
+
+The ship's people did not send for you. Someone else did.
+
+And now they want to meet.
+
+*page_break
+
+*finish
